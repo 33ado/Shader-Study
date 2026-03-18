@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8s4hdvb0s27"]
+
+[ext_resource type="Shader" uid="uid://jruxs5teclvw" path="res://main.gdshader" id="1_ig7tw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ig7tw"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
+noise = SubResource("FastNoiseLite_ig7tw")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+shader = ExtResource("1_ig7tw")
+shader_parameter/animation_speed = 0.5
+shader_parameter/y_offset = 0.5
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_0xm2m")
+shader_parameter/flame_color = Color(0.6016353, 0.5317364, 0.2952825, 1)
+
+[node name="Main" type="Node2D" unique_id=1967518877]
+
+[node name="Fire" type="ColorRect" parent="." unique_id=2016413188]
+material = SubResource("ShaderMaterial_0xm2m")
+offset_right = 40.0
+offset_bottom = 40.0
